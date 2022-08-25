@@ -1,0 +1,80 @@
+body
+{
+    background-image: url(../images/eye.jpg);
+    background-attachment: fixed;
+}
+
+.name
+{
+    font-size: 50px;
+    background-color: white;
+    color: black;
+    font-family: monospace;
+    text-align: center;
+    margin-top: 10px;
+    width: 30%;
+}
+
+.text
+{
+    background-color: white;
+    color: black;
+    font-family: monospace;
+    font-size: 30px;
+}
+
+.nav-gap
+{
+    margin: 0px 54px;
+    margin-bottom: 10px;
+}
+
+.imgbox
+{
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ p
+ {
+    font-size: 23px;
+ }
+
+ .box
+{
+    width: 70%;
+}
+
+.border {
+    border-style: thick solid;
+    border-color: black;
+    border-radius: 40px;
+    margin-bottom: 10px;
+}
+
+.carousel-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-bottom: 10px;
+  }
+
+  .carousel-control {
+    width: 65%;
+}
+
+a
+{
+    text-decoration: none;
+    color:black;
+}
+
