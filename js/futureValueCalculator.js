@@ -20,7 +20,32 @@ const calculateFV = (investment, rate, years) => {
     $("#future").value = futureValue.toFixed(2);
 }
 
-const processEntries = () => {
+// const processEntries = () => {
+//     const investment = parseFloat($("#investment").value);
+//     const rate = parseFloat($("#rate").value);
+//     const years = parseFloat($("#years").value);
+//     if(isNaN(investment) || investment <= 0 || investment > 100000){
+//         getError("Total Investment", "100,000");
+//         focusAndSelect("#investment");
+//     }
+//     else if(isNaN(rate) || rate <= 0 || rate > 15){
+//         getError("Annual Interest Rate", "15");
+//         focusAndSelect("#rate");
+//     }
+//     else if(isNaN(years) || years <= 0 || years > 50){
+//         getError("Number of Years", "50");
+//         focusAndSelect("#years");
+//     }
+//     else{
+//         calculateFV(investment, rate, years);
+//     }
+    
+// }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    $("#calculate").addEventListener(
+    "click", evt => {
     const investment = parseFloat($("#investment").value);
     const rate = parseFloat($("#rate").value);
     const years = parseFloat($("#years").value);
@@ -32,18 +57,12 @@ const processEntries = () => {
         getError("Annual Interest Rate", "15");
         focusAndSelect("#rate");
     }
-    else if(isNaN(investment) || investment <= 0 || investment > 50){
+    else if(isNaN(years) || years <= 0 || years > 50){
         getError("Number of Years", "50");
-        focusAndSelect("#rate");
+        focusAndSelect("#years");
     }
     else{
-
-    }
-    calculateFV(investment, rate, years);
-}
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    $("#calculate").addEventListener(
-    "click", processEntries);
+        calculateFV(investment, rate, years);
+    }});
+    
    });
