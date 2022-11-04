@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landen's Website</title>
+    <link href="js/jquery-ui-1.13.2.custom/jquery-ui-1.13.2.custom/jquery-ui.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/myStyle.css">
+    <link rel="stylesheet" href="js/lightbox2/dist/css/lightbox.css">
 </head>
 <body>
     <script src="js/bootstrap.bundle.js"></script>
@@ -61,9 +63,25 @@
       <div class="container imgbox">
         <div class="row">
           <div class="col-md">
+            <a class="example-image-link" href="images/face.jpg" data-lightbox="face">
             <img src="images/face.jpg" class="img" alt="Landen's face"
-				    width="300" height="500"/>
+				    width="300" height="500"/></a>
           </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md">
+            <p>
+            <button id="dialog-link" class="ui-button ui-corner-all ui-widget border text img">
+              <span class="ui-icon ui-icon-newwin"></span>Image Info
+            </button>
+            </p>
+
+            <div id="dialog" title="Image Info">
+              <p>This picture was taken by me at the state contest for BPA of 2021. I had to dress up before going and taking my contest. 
+                I placed 7th out of 19 participants. We had a lot of fun at the state BPA contests.</p>
+            </div>
         </div>
       </div>
 
@@ -75,9 +93,11 @@
               I was born in Bryan, Ohio on May 10th, 2005. My parents are Mindy Edelman and Russell Nickloy.
               I have a job at Reifel Indistries in Pioneer. I go to school at Four County Career Center.
             </p>
+            
           </div>
         </div>
       </div>
+      
 
       <div class="container text border box">
         <div class="row">
@@ -103,5 +123,45 @@
           </div>
         </div>
       </div>
+<script src="js\lightbox2\dist\js\lightbox-plus-jquery.js "></script>
+<script src="js/jquery-ui-1.13.2.custom/jquery-ui-1.13.2.custom/external/jquery/jquery.js"></script>
+<script src="js/jquery-ui-1.13.2.custom/jquery-ui-1.13.2.custom/jquery-ui.js"></script>
+
+<script>
+$( "#dialog" ).dialog({
+	autoOpen: false,
+	width: 400,
+	buttons: [
+		{
+			text: "Ok",
+			click: function() {
+				$( this ).dialog( "close" );
+			}
+		},
+		{
+			text: "Cancel",
+			click: function() {
+				$( this ).dialog( "close" );
+			}
+		}
+	]
+});
+
+// Link to open the dialog
+$( "#dialog-link" ).click(function( event ) {
+	$( "#dialog" ).dialog( "open" );
+	event.preventDefault();
+});
+
+// Hover states on the static widgets
+$( "#dialog-link, #icons li" ).hover(
+	function() {
+		$( this ).addClass( "ui-state-hover" );
+	},
+	function() {
+		$( this ).removeClass( "ui-state-hover" );
+	}
+);
+</script>
     </body>
 </html>
